@@ -1,0 +1,134 @@
+addrmap CSR_CONV {
+  name = "Memory map of Convolutor 5x5";
+  default regwidth = 32;
+
+  reg CONV_CTRL {
+    name = "Регистр упраления";
+    field {
+      name = "Включение/выключение блока";
+      desc = "0: Блок выключен<br>
+              1: Блок включен<br>";
+    } EN[0:0];
+
+    field {
+      name = "Статус вычисления";
+      desc = "0: Вычисление не закончено<br>
+              1: Вычисление закончено<br>";
+    } DONE[1:1];
+  } CONV_CTRL @0x0;
+
+  reg LINE_WEIGHT_0 {
+    name = "Регистр весов первой линии ядра свертки";
+    field {
+      name = "Вес W_0_0";
+    } W_0[5:0];
+
+    field {
+      name = "Вес W_0_1";
+    } W_1[11:6];
+
+    field {
+      name = "Вес W_0_2";
+    } W_2[17:12];
+
+    field {
+      name = "Вес W_0_3";
+    } W_3[23:18];
+
+    field {
+      name = "Вес W_0_4";
+    } W_4[29:24];
+  } LINE_WEIGHT_0 @0x4;
+
+  reg LINE_WEIGHT_1 {
+    name = "Регистр весов второй линии ядра свертки";
+    field {
+      name = "Вес W_1_0";
+    } W_0[5:0];
+
+    field {
+      name = "Вес W_1_1";
+    } W_1[11:6];
+
+    field {
+      name = "Вес W_1_2";
+    } W_2[17:12];
+
+    field {
+      name = "Вес W_1_3";
+    } W_3[23:18];
+
+    field {
+      name = "Вес W_1_4";
+    } W_4[29:24];
+  } LINE_WEIGHT_1 @0x8;
+
+  reg LINE_WEIGHT_2 {
+    name = "Регистр весов третьей линии ядра свертки";
+    field {
+      name = "Вес W_2_0";
+    } W_0[5:0];
+
+    field {
+      name = "Вес W_2_1";
+    } W_1[11:6];
+
+    field {
+      name = "Вес W_2_2";
+    } W_2[17:12];
+
+    field {
+      name = "Вес W_2_3";
+    } W_3[23:18];
+
+    field {
+      name = "Вес W_2_4";
+    } W_4[29:24];
+  } LINE_WEIGHT_2 @0xC;
+
+  reg LINE_WEIGHT_3 {
+    name = "Регистр весов четвертой линии ядра свертки";
+    field {
+      name = "Вес W_3_0";
+    } W_0[5:0];
+
+    field {
+      name = "Вес W_3_1";
+    } W_1[11:6];
+
+    field {
+      name = "Вес W_3_2";
+    } W_2[17:12];
+
+    field {
+      name = "Вес W_3_3";
+    } W_3[23:18];
+
+    field {
+      name = "Вес W_3_4";
+    } W_4[29:24];
+  } LINE_WEIGHT_3 @0x10;
+
+  reg LINE_WEIGHT_4 {
+    name = "Регистр весов четвертой линии ядра свертки";
+    field {
+      name = "Вес W_4_0";
+    } W_0[5:0];
+
+    field {
+      name = "Вес W_4_1";
+    } W_1[11:6];
+
+    field {
+      name = "Вес W_4_2";
+    } W_2[17:12];
+
+    field {
+      name = "Вес W_4_3";
+    } W_3[23:18];
+
+    field {
+      name = "Вес W_4_4";
+    } W_4[29:24];
+  } LINE_WEIGHT_4 @0x14;
+};
